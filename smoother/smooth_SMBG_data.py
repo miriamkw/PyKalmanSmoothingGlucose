@@ -9,13 +9,13 @@ from smoother.convert_to_mmol_L import convert_to_mmol_L
 from smoother.set_iso_error import set_iso_error
 
 
-def smooth_smbg_data(t_in, y_in, outlier_removal=1, dynamic_model=2):
+def smooth_smbg_data(t_in, y_in, outlier_removal=1, outlier_sd_limit=2, dynamic_model=2):
     """
     Creates a smoothed glucose curve from input glucose readings
     assumed to come from a Self Monitoring Blood Glucose meter.
 
     Parameters:
-    - t_in: array-like, time in datetime or minutes.
+    - t_in: array-like, `time in datetime or minutes.`
     - y_in: array-like, glucose values.
     - y_error: [] or array of same length as y.
     - outlier_removal: 0, 1 or 2.
@@ -31,7 +31,7 @@ def smooth_smbg_data(t_in, y_in, outlier_removal=1, dynamic_model=2):
     # Default parameters
     params = {
         'outlierRemoval': outlier_removal,
-        'outlierSDlimit': 2,
+        'outlierSDlimit': outlier_sd_limit,
         'dynamicModel': dynamic_model,
         'y_error': [],
         'tout': [],
