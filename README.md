@@ -2,13 +2,11 @@
 
 [![MATLAB Implementation](https://img.shields.io/badge/MATLAB-Implementation-brightgreen)](https://github.com/omstaal/kalman-smoothing-glucose?tab=readme-ov-file)
 
-This is a Python implementation of the Kalman smoothing described in [1]. Matlab implementation is available [here](https://github.com/omstaal/kalman-smoothing-glucose?tab=readme-ov-file).
-
-The filter can apply offline Kalman smoothing, performs outlier detection and removal, and uncertainty estimation.
+This is a Python implementation of the Kalman smoothing described in [1]. Matlab implementation is available [here](https://github.com/omstaal/kalman-smoothing-glucose?tab=readme-ov-file). The filter can apply (offline) Kalman smoothing, perform outlier detection and removal, and estimate measurement uncertainty.
 
 ![FIGURE NOT AVAILABLE](figures/kalman_smoothing.png "Kalman smoothing example output.")
 
-## Example Usage
+## Getting Started
 
 Setup and activate virtual environment. 
 
@@ -30,6 +28,8 @@ Run test example:
 ```
 python example/test.py
 ```
+
+## Description of Usage
 
 
 TO DO: Describe how to use with your own files. How to resample etc...

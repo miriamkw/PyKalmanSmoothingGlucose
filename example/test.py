@@ -1,9 +1,7 @@
 import os
 import sys
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-from scipy.signal import savgol_filter  # Example smoothing function
 
 # Adjust the path to point to the project root directory
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))

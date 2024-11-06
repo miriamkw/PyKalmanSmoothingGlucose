@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from scipy.linalg import cholesky
 
 
 def ReconstructBGFromCGM(t_in, y_in_cgm, bias, lag, **kwargs):
