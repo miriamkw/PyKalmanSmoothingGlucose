@@ -6,6 +6,7 @@ from smoother.interpolated_values import interpolated_values
 from smoother.set_dynamic_model import set_dynamic_model
 from smoother.autodetect_glucose_unit import autodetect_glucose_unit
 from smoother.convert_to_mmol_L import convert_to_mmol_L
+from smoother.convert_to_mg_dl import convert_to_mg_dl
 from smoother.set_iso_error import set_iso_error
 
 
@@ -213,5 +214,14 @@ def smooth_smbg_data(t_in, y_in, outlier_removal=1, outlier_sd_limit=2, dynamic_
 
     # Add dynModel
     output['dynModel'] = dyn_model
+
+    # Convert back to original units, if necessary
+    if params['unit'] == 'mg_dL':
+        output['y_filtered'] = convert_to_mg_dl(output['y_filtered'])
+        output['y_filtered_sd'] = convert_to_mg_dl(output['y_filtered_sd'])
+        output['y_smoothed'] = convert_to_mg_dl(output['y_smoothed'])
+        output['y_smoothed_sd'] = convert_to_mg_dl(output['y_smoothed_sd'])
+        output['y_smoothed_at_tout'] = convert_to_mg_dl(output['y_smoothed_at_tout'])
+        output['y_smoothed_sd_at_tout'] = convert_to_mg_dl(output['y_smoothed_sd_at_tout'])
 
     return output
